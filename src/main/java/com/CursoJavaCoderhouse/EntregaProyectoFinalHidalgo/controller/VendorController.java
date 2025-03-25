@@ -1,8 +1,9 @@
-package com.CursoJavaCoderhouse.SegundaEntregaHidalgo.controller;
+/*
+package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.controller;
 
 
-import com.CursoJavaCoderhouse.SegundaEntregaHidalgo.model.Vendor;
-import com.CursoJavaCoderhouse.SegundaEntregaHidalgo.service.VendorService;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.model.Vendor;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.service.VendorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,3 +40,4 @@ public class VendorController {
         return ResponseEntity.ok().body(updatedVendor);
     }
 }
+*/

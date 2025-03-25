@@ -1,7 +1,7 @@
-package com.CursoJavaCoderhouse.SegundaEntregaHidalgo.controller;
+/*package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.controller;
 
-import com.CursoJavaCoderhouse.SegundaEntregaHidalgo.model.Domicilio;
-import com.CursoJavaCoderhouse.SegundaEntregaHidalgo.service.DomicilioService;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.model.Domicilio;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.service.DomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,4 +38,4 @@ public class DomicilioController {
         List<Domicilio> domicilios = domicilioService.findAll();
         return ResponseEntity.ok().body(domicilios);
     }
-}
+}*/

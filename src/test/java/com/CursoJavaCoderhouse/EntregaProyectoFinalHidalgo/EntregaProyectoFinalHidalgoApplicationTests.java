@@ -1,10 +1,10 @@
-package com.CursoJavaCoderhouse.SegundaEntregaHidalgo;
+package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PrimerEntregaHidalgoApplicationTests {
+class EntregaProyectoFinalHidalgoApplicationTests {
 
 	@Test
 	void contextLoads() {
