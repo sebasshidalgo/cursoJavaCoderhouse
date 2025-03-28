@@ -14,7 +14,7 @@ public class AppRunner implements CommandLineRunner { // Clase auxiliar que apli
     public void run(String... args) throws Exception {
         System.out.println("Probando App...");
 
-        vendorService.printVendor();
+        //vendorService.printVendor();
     }
 }
 

@@ -22,7 +22,7 @@ public class Branch {
     private String docId;
     // Relaciones
     @ManyToOne // 1 o muchas branches pertenecen a un solo vendor
-    @JoinColumn(name = "vendor_id", nullable = false)   // Relaciona la tabla Branch con la tabla Vendor
+    @JoinColumn(name = "vendor_id", nullable = true)   // Relaciona la tabla Branch con la tabla Vendor
     private Vendor vendor;
 
     @ManyToMany // Muchos colaboradores pueden acceder a muchas branches
