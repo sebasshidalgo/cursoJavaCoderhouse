@@ -13,4 +13,8 @@ public class BranchCreateDTO {
     private boolean isDefault;
     private String docType;
     private String docId;
+
+    public boolean isDefault() {
+        return isDefault;
+    }
 }

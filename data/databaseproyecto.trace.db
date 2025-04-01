@@ -405,3 +405,11 @@ SELECT * FROM COLLABORATORS_BRANCH [42102-232]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COLLABORATO_BRANCH" no encontrada
 Table "COLLABORATO_BRANCH" not found; SQL statement:
 SELECT * FROM COLLABORATO_BRANCH [42102-232]
+2025-04-01 00:34:43.090672-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COLABORATORS" no encontrada
+Table "COLABORATORS" not found; SQL statement:
+SELECT * FROM COLABORATORS [42102-232]
+2025-04-01 00:34:53.925446-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "COLLABORATORS_BRANCH" no encontrada
+Table "COLLABORATORS_BRANCH" not found; SQL statement:
+SELECT * FROM COLLABORATORS_BRANCH [42102-232]
