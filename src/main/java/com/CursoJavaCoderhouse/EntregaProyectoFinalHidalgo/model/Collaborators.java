@@ -23,7 +23,7 @@ public class Collaborators {
     private String docId;
     // Relaciones
     @ManyToOne // Uno o varios colaboradores pertenecen a un solo vendor
-    @JoinColumn(name = "vendor_id", nullable = false) // Relaciona la tabla Collaborators con la tabla Vendor
+    @JoinColumn(name = "vendor_id", nullable = true) // Relaciona la tabla Collaborators con la tabla Vendor
     @JsonIgnore // Para evitar loop infinito
     private Vendor vendor;
 

@@ -1,6 +1,7 @@
 package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.dto;
 
 import lombok.*;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,4 +14,5 @@ public class CollaboratorsCreateDTO {
     private String email;
     private String docType;
     private String docId;
+    private UUID vendorId;
 }

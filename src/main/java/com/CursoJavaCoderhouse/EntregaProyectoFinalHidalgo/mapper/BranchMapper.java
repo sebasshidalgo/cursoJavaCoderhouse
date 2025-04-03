@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BranchMapper {
     // Convertir de DTO a entidad
-    public static Branch toEntity(BranchCreateDTO dto) {
+    public Branch toEntity(BranchCreateDTO dto) {
         return Branch.builder()
                 .sapId(dto.getSapId())
                 .name(dto.getName())
@@ -18,7 +18,7 @@ public class BranchMapper {
                 .build();
     }
     // Convertir de entidad a DTO
-    public static BranchResponseDTO toResponseDTO(Branch branch) {
+    public BranchResponseDTO toResponseDTO(Branch branch) {
         if (branch == null) {
             return null;
         }
@@ -26,6 +26,7 @@ public class BranchMapper {
                 .sapId(branch.getSapId())
                 .name(branch.getName())
                 .isDefault(branch.isDefault())
+                .vendorBrandName(branch.getVendor() != null ? branch.getVendor().getBrandName() : null)
                 .build();
     }
 }

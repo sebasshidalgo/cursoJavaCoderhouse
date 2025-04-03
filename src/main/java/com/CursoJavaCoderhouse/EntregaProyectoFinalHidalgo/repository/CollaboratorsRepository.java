@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public interface CollaboratorsRepository extends JpaRepository<Collaborators, UUID> { // Conexión con la base de datos para la entidad Collaborators
+public interface CollaboratorsRepository extends JpaRepository<Collaborators, Long> { // Conexión con la base de datos para la entidad Collaborators
+    boolean existsByEmail(String email); // Metodo para verificar existencia por email
 }

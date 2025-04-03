@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CollaboratorsMapper {
     // Convertir de DTO a entidad
-    public static Collaborators toEntity(CollaboratorsCreateDTO dto) {
+    public Collaborators toEntity(CollaboratorsCreateDTO dto) {
         return Collaborators.builder()
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())
@@ -18,7 +18,7 @@ public class CollaboratorsMapper {
                 .build();
     }
     // Convertir de entidad a DTO
-    public static CollaboratorsResponseDTO toResponseDTO(Collaborators collaborator) {
+    public CollaboratorsResponseDTO toResponseDTO(Collaborators collaborator) {
         if (collaborator == null) {
             return null;
         }

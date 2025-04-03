@@ -11,4 +11,5 @@ public class BranchResponseDTO {
     private int sapId;
     private String name;
     private boolean isDefault;
+    private String vendorBrandName;
 }
