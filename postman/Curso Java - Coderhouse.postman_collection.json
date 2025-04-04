@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "ae41d6fa-18bb-4027-a156-37301a12e8aa",
+		"name": "Curso Java - Coderhouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33558209"
+	},
+	"item": [
+		{
+			"name": "Endpoints Tabla Vendor",
+			"item": [
+				{
+					"name": "Get vendor by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendors/150b5fb1-0e43-411b-8a71-878e0e938104",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors",
+								"150b5fb1-0e43-411b-8a71-878e0e938104"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brandName\": \"TEST\",\n  \"companyName\": \"TEST\",\n  \"docType\": \"CUIT\",\n  \"docId\": \"11-1111111-1\",\n  \"email\": \"hellomoto@mail.com\",\n  \"address\": {\n    \"street\": \"TEST\",\n    \"number\": 1002,\n    \"apartment\": \"10°\",\n    \"city\": \"CABA\",\n    \"state\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"zipCode\": \"1010\"\n  },\n  \"branches\": [\n    {\n      \"sapId\": 951601,\n      \"name\": \"TEST\",\n      \"isDefault\": true,\n      \"docType\":\"CUIT\",\n      \"docId\": \"11-1111111-1\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vendors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update vendor by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brandName\": \"HORACIO HIDALGO\",\n    \"companyName\": \"HH SRL\",\n    \"email\": \"HH@mail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vendors/7098e36b-2cea-406d-8d74-4005895cc09f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors",
+								"7098e36b-2cea-406d-8d74-4005895cc09f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vendor by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendors/bb6be02f-51cc-47c8-8db5-be94c4c79d7c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors",
+								"bb6be02f-51cc-47c8-8db5-be94c4c79d7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all vendors",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vendors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vendors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints Tabla Branches",
+			"item": [
+				{
+					"name": "Get branch by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/branches/f85df22a-9b7a-4aaf-9404-b227b3abf107",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches",
+								"f85df22a-9b7a-4aaf-9404-b227b3abf107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all branches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create branch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sapId\": \"11111\",\n  \"name\": \"TEST\",\n  \"default\": true,\n  \"docType\": \"CUIT\",\n  \"docId\": \"11-1111111-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/branches/150b5fb1-0e43-411b-8a71-878e0e938104",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches",
+								"150b5fb1-0e43-411b-8a71-878e0e938104"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update branch by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sapId\": \"951100\",\n  \"name\": \"Predeterminada\",\n  \"default\": true,\n  \"docType\": \"CUIT\",\n  \"docId\": \"30-70233938-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/branches/9b70f442-e9d3-4508-9828-bd0015b29b4f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches",
+								"9b70f442-e9d3-4508-9828-bd0015b29b4f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete branch by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/branches/ad1df90a-051d-442b-b346-279e583bdd5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches",
+								"ad1df90a-051d-442b-b346-279e583bdd5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all branches",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/branches",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"branches"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints Tabla Collaborators",
+			"item": [
+				{
+					"name": "Get collaborator by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/collaborators/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all collaborators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/collaborators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create collaborator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Carlos Alberto\",\n    \"lastName\": \"Gutierrez\",\n    \"email\": \"charly01@gmail.com\",\n    \"docType\": \"DNI\",\n    \"docId\": \"33245675\",\n    \"vendorId\": \"25e96e3c-47ee-4c1c-b55d-3c71ac4ae3a2\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/collaborators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update collaborator by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Camilo\",\n    \"lastName\": \"Palma\",\n    \"email\": \"camilopalma10@hotmail.com\",\n    \"docType\": \"DNI\",\n    \"docId\": \"11343654\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/collaborators/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete collaborator by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/collaborators/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all collaborators",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/collaborators",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collaborators"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints Tabla Address",
+			"item": [
+				{
+					"name": "Get address by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create address (in Vendor)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street\": \"Av. Siempre Viva\",\n  \"number\": 742,\n  \"apartment\": \"B\",\n  \"city\": \"Springfield\",\n  \"state\": \"Illinois\",\n  \"country\": \"USA\",\n  \"zipCode\": 12345\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address/b54d6601-fd7e-44e8-a80f-2d14509aacb6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"b54d6601-fd7e-44e8-a80f-2d14509aacb6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"street\": \"Av. Siempre Viva ACTUALIZADA\",\n  \"number\": 1000,\n  \"apartment\": \"C\",\n  \"city\": \"Springfield\",\n  \"state\": \"Illinois\",\n  \"country\": \"USA\",\n  \"zipCode\": 54321\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete address by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

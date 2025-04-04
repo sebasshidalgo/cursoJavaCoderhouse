@@ -1,6 +1,7 @@
 package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.ExternalDocumentation;
@@ -16,7 +17,12 @@ public class OpenApiConfig {
                 .info(new Info().title("Vendors Manager API")
                         .description("API para administrar proveedores, sucursales, domicilios y colaboradores")
                         .version("v0.0.1")
-                        .license(new License().name("Apache 2.0").url("http://springdoc.org")))
+                        .license(new License().name("Apache 2.0").url("https://springdoc.org"))
+                        .contact(new Contact()
+                                .name("Developer: Sebastián Matías Hidalgo")
+                                .url("https://github.com/sebasshidalgo")
+                        )
+                )
                 .externalDocs(new ExternalDocumentation()
                         .description("SpringShop Wiki Documentation")
                         .url("https://springshop.wiki.github.org/docs"));
