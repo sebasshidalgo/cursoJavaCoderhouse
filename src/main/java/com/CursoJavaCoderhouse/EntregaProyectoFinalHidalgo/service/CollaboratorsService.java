@@ -47,7 +47,7 @@ public class CollaboratorsService {
 
         // Guardar el colaborador en la base de datos
         Collaborators savedCollaborator = collaboratorsRepository.save(collaborator);
-        logger.info("✅ Colaborador {} {} creado con ID: {}", savedCollaborator.getFirstName(), savedCollaborator.getLastName(), savedCollaborator.getId()); // Log de creación
+        logger.info("✅ Colaborador {} {} creado con ID: {} en proveedor {}", savedCollaborator.getFirstName(), savedCollaborator.getLastName(), savedCollaborator.getId(), vendor.getBrandName()); // Log de creación
 
         return collaboratorsMapper.toResponseDTO(savedCollaborator);
     }

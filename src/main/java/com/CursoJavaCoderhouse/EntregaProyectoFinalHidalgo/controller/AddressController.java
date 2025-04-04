@@ -1,41 +1,60 @@
-/*package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.controller;
+package com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.controller;
 
-import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.model.Domicilio;
-import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.service.DomicilioService;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.dto.AddressCreateDTO;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.dto.AddressResponseDTO;
+import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.service.AddressService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("/domicilios")  // Ruta base para acceder a los endpoints
-public class DomicilioController {
+@RequestMapping("/address") // Ruta base para acceder a los endpoints
+public class AddressController {
 
     @Autowired
-    private DomicilioService domicilioService; // Inyección de dependencia
+    private AddressService addressService; // Inyección de dependencia
 
-    @PostMapping // Metodo para crear un nuevo domicilio
-    public ResponseEntity<Domicilio> newDomicilio(@RequestBody Domicilio d) {
-        Domicilio newDomicilio = domicilioService.save(d);
-        return ResponseEntity.ok().body(newDomicilio);
+    // Metodo para crear una nueva dirección asociada a un proveedor
+    @PostMapping("/{vendorId}")
+    public ResponseEntity<AddressResponseDTO> createAddress(@PathVariable UUID vendorId, @RequestBody @Valid AddressCreateDTO addressDTO) {
+        AddressResponseDTO response = addressService.createAddress(addressDTO, vendorId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @DeleteMapping // Metodo para eliminar todos los domicilios
-    public ResponseEntity<String> deleteAll() {
-        domicilioService.deleteAll();
-        return ResponseEntity.ok().body("Se eliminaron todos los domicilios");
+    // Metodo para obtener el listado de direcciones
+    @GetMapping
+    public ResponseEntity<List<AddressResponseDTO>> getAllAddresses() {
+        return ResponseEntity.ok(addressService.getAllAddresses());
     }
 
-    @PutMapping("/{id}") // Metodo para actualizar un domicilio por su id
-    public ResponseEntity<Domicilio> updateDomicilio(@PathVariable Long id, @RequestBody Domicilio domicilio) {
-        Domicilio updatedDomicilio = domicilioService.update(id, domicilio);
-        return ResponseEntity.ok().body(updatedDomicilio);
+    // Metodo para obtener una dirección por su ID
+    @GetMapping("/{id}")
+    public ResponseEntity<AddressResponseDTO> getAddressById(@PathVariable Long id) {
+        return ResponseEntity.ok(addressService.getAddressById(id));
     }
 
-    @GetMapping() // Metodo para obtener el listado de domicilios
-    public ResponseEntity<List<Domicilio>> obtenerDomicilios() {
-        List<Domicilio> domicilios = domicilioService.findAll();
-        return ResponseEntity.ok().body(domicilios);
+    // Metodo para actualizar una dirección por su ID
+    @PutMapping("/{id}")
+    public ResponseEntity<AddressResponseDTO> updateAddress(@PathVariable Long id, @Valid @RequestBody AddressCreateDTO addressDTO) {
+        return ResponseEntity.ok(addressService.updateAddress(id, addressDTO));
     }
-}*/
+
+    // Metodo para eliminar una dirección por su ID
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteAddress(@PathVariable Long id) {
+        addressService.deleteAddressById(id);
+        return ResponseEntity.ok("✅ Dirección eliminada correctamente");
+    }
+
+    // Metodo para eliminar todas las direcciones
+    @DeleteMapping
+    public ResponseEntity<String> deleteAllAddresses() {
+        addressService.deleteAllAddresses();
+        return ResponseEntity.ok("✅ Todas las direcciones han sido eliminadas correctamente");
+    }
+}
+

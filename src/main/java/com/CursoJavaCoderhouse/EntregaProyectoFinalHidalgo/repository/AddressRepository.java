@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public interface AddressRepository extends JpaRepository<Address, UUID> { // Conexión con la base de datos para la entidad Address
+public interface AddressRepository extends JpaRepository<Address, Long> { // Conexión con la base de datos para la entidad Address
 }

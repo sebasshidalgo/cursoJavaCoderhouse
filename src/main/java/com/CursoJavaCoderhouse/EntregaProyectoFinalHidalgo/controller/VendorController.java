@@ -5,6 +5,8 @@ import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.dto.VendorResponseDTO
 import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.dto.VendorUpdateDTO;
 import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.model.Vendor;
 import com.CursoJavaCoderhouse.EntregaProyectoFinalHidalgo.service.VendorService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +22,11 @@ public class VendorController {
     @Autowired
     private VendorService vendorService; // Inyección de dependencia
 
-    @PostMapping // Metodo para crear un nuevo vendor
+    @PostMapping
+    @Operation(summary = "Create vendor", description = "Método para crear un nuevo vendor") // Descripción de la operación
+    @ApiResponse(responseCode = "201", description = "Vendor creado correctamente") // Respuesta esperada
+    @ApiResponse(responseCode = "400", description = "Error en la creación del vendor") // Respuesta de error
+    @ApiResponse(responseCode = "500", description = "Error interno del servidor") // Respuesta de error
     public ResponseEntity<VendorResponseDTO> newVendor(@RequestBody @Valid VendorCreateDTO v) {
         VendorResponseDTO newVendor = vendorService.createVendor(v);
         return ResponseEntity.status(HttpStatus.CREATED).body(newVendor);
